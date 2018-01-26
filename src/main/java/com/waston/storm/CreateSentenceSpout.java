@@ -40,7 +40,7 @@ public class CreateSentenceSpout extends BaseRichSpout{
 		this.collector = spoutOutputCollector;
 		random = new Random();
 		sentences = new String[] {"this is a Strom test","apple orange","pig dog cat"};
-		
+		waitAcker = new ConcurrentHashMap<UUID,Values>();
 	}
     
 	/**
