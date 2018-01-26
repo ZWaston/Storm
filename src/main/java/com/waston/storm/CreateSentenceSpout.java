@@ -78,7 +78,7 @@ public class CreateSentenceSpout extends BaseRichSpout{
 		System.out.println("消息处理失败:" + msgId);
         System.out.println("重新发送失败的信息...");
         //重发如果不开启ackfail机制，那么spout的map对象中的该数据不会被删除的。
-        collector.emit(new Values(waitAcker.get(msgId)),msgId);
+        collector.emit(waitAcker.get(msgId),msgId);
 	}
 
 	
